@@ -524,6 +524,15 @@ int main() {
     cout << fixed;
     cout.precision(10);
     cout << "\n" << endl;
-    cout << "걸린 시간 : " << (diff.count()) * 0.00000001 << "초" << endl;
+    std::cout << "노드 삽입 및 삭제에 걸린 시간 : " 
+         << ch::duration_cast<ch::microseconds> (diff).count() << " microseconds" << std::endl;
+
+    /*
+        - duration_cast 는 임의의 duration 객체를 받아서 우리가 원하는 duration 으로 캐스팅 가능
+        - std::chrono::microseconds 는 <chrono> 에 미리 정의되어 있는 duration 객체
+
+        - microseconds 로 캐스팅 한뒤에 리턴하는 count 값
+            -> 해당 duration 이 몇 초 인지를 나타냄
+    */
     
 }
